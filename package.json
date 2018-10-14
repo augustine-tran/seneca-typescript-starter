@@ -1,0 +1,9 @@
+{
+  "name": "merlin",
+  "version": "1.0.0",
+  "author": "Khanh Tran <khanh.tq@geekup.vn>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.9.2"
+  }
+}

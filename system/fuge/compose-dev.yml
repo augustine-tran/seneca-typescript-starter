@@ -1,0 +1,36 @@
+fuge_global:
+  tail: true
+  monitor: true
+  auto_generate_environment: false
+  monitor_excludes:
+    - '**/node_modules/**'
+    - '**/.git/**'
+    - '**/*.log'
+bases:
+  type: process
+  path: ../../bases-service
+  environment:
+    HOST: 127.0.0.1
+  run: ./node_modules/.bin/ts-node src/service.ts
+ping:
+  type: process
+  path: ../../ping-service
+  environment:
+    HOST: 127.0.0.1
+    BASES: 127.0.0.1
+  run: ./node_modules/.bin/ts-node src/service.ts
+color:
+  type: process
+  path: ../../color-service
+  environment:
+    HOST: 127.0.0.1
+    BASES: 127.0.0.1
+  run: ./node_modules/.bin/ts-node src/service.ts
+
+repl:
+  type: process
+  environment:
+    HOST: 127.0.0.1
+    BASES: 127.0.0.1
+  path: ../../repl
+  run: ./node_modules/.bin/ts-node src/service-repl.ts
